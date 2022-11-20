@@ -3,6 +3,23 @@
     include "app/database/db.php";
 
     $posts = selectAll('specsub');
+    $subs = selectAll('subjects');
+    $countsub = count($subs);
+    $countpost = count($posts);
+    for($i=1; $i<=$countsub;$i++){
+        echo ' Предмет: ' . $subs[$i-1]['name'] . ' Цвет: ' . $subs[$i-1]['color'];
+        echo "<pre>";
+        echo "</pre>";
+    }
+
+    foreach($posts as $post):
+        for($j=1; $j<=$countsub;$j++){
+            if ($post['subject']==$subs[$j-1]['name']):
+                    echo $subs[$j-1]['color'];
+            endif;
+        }
+    endforeach;
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,7 +30,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
             integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/fonts/HelveticaNeueCyr/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Moscow Discpilines</title>
 </head>
 <body>
@@ -45,13 +63,28 @@
 </div> -->
 
 <section class="main-discp">
-    <h1 class="content-heading">Пример перечня диспциплин для учебной группы</h1>
+    <h1 class="content-heading">Дисциплины</h1>
     <div class="main-content-test">
         <ul class="list-sem">
         <h2 class="sem-heading">Семестр 1</h2>            
         <?php foreach ($posts as $post): ?>
             <?php if($post['semestr']==1): ?>
-                <li class="sem-item"><?php echo $post['subject']?></li>
+                <button class="btn-modal" data-path="popup">
+                    <li style="background-color: <?php 
+                    for($j=1; $j<=$countsub;$j++){
+                        if ($post['subject']==$subs[$j-1]['name']):
+                            echo $subs[$j-1]['color'];
+                        endif;} ?>" class="sem-item"><?php echo $post['subject']?></li>
+                </button>
+                <div class="modals">
+                    <div class="modal-overlay">
+                        <div class="modal modal--1" data-target="popup">
+                            <b>Описание:</b><p></p>
+                            <p><b>ЗЕ:<?php echo $post['ze']?></b><span></span></p>
+                            <p><b>Специализация:<?php echo $post['spec']?></b><span></span></p>
+                        </div>
+                    </div>
+                </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
@@ -59,7 +92,21 @@
             <h2 class="sem-heading">Семестр 2</h2>
             <?php foreach ($posts as $post): ?>
                 <?php if($post['semestr']==2): ?>
-                    <li class="sem-item"><?php echo $post['subject']?></li>
+                <button class="btn-modal" data-path="popup">
+                <li style="background-color: <?php 
+                    for($j=1; $j<=$countsub;$j++){
+                        if ($post['subject']==$subs[$j-1]['name']):
+                            echo $subs[$j-1]['color'];
+                        endif;} ?>" class="sem-item"><?php echo $post['subject']?></li>                </button>
+                <div class="modals">
+                    <div class="modal-overlay">
+                        <div class="modal modal--1" data-target="popup">
+                            <b>Описание:</b><p></p>
+                            <p><b>ЗЕ:<?php echo $post['ze']?></b><span></span></p>
+                            <p><b>Специализация:<?php echo $post['spec']?></b><span></span></p>
+                        </div>
+                    </div>
+                </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
@@ -67,7 +114,21 @@
             <h2 class="sem-heading">Семестр 3</h2>
             <?php foreach ($posts as $post): ?>
                 <?php if($post['semestr']==3): ?>
-                    <li class="sem-item"><?php echo $post['subject']?></li>
+                    <button class="btn-modal" data-path="popup">
+                    <li style="background-color: <?php 
+                    for($j=1; $j<=$countsub;$j++){
+                        if ($post['subject']==$subs[$j-1]['name']):
+                            echo $subs[$j-1]['color'];
+                        endif;} ?>" class="sem-item"><?php echo $post['subject']?></li>                </button>
+                <div class="modals">
+                    <div class="modal-overlay">
+                        <div class="modal modal--1" data-target="popup">
+                            <b>Описание:</b><p></p>
+                            <p><b>ЗЕ:<?php echo $post['ze']?></b><span></span></p>
+                            <p><b>Специализация:<?php echo $post['spec']?></b><span></span></p>
+                        </div>
+                    </div>
+                </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
@@ -75,7 +136,21 @@
             <h2 class="sem-heading">Семестр 4</h2>
             <?php foreach ($posts as $post): ?>
                 <?php if($post['semestr']==4): ?>
-                    <li class="sem-item"><?php echo $post['subject']?></li>
+                    <button class="btn-modal" data-path="popup">
+                    <li style="background-color: <?php 
+                    for($j=1; $j<=$countsub;$j++){
+                        if ($post['subject']==$subs[$j-1]['name']):
+                            echo $subs[$j-1]['color'];
+                        endif;} ?>" class="sem-item"><?php echo $post['subject']?></li>                </button>
+                <div class="modals">
+                    <div class="modal-overlay">
+                        <div class="modal modal--1" data-target="popup">
+                            <b>Описание:</b><p></p>
+                            <p><b>ЗЕ:<?php echo $post['ze']?></b><span></span></p>
+                            <p><b>Специализация:<?php echo $post['spec']?></b><span></span></p>
+                        </div>
+                    </div>
+                </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
@@ -83,7 +158,21 @@
             <h2 class="sem-heading">Семестр 5</h2>
             <?php foreach ($posts as $post): ?>
                 <?php if($post['semestr']==5): ?>
-                    <li class="sem-item"><?php echo $post['subject']?></li>
+                    <button class="btn-modal" data-path="popup">
+                    <li style="background-color: <?php 
+                    for($j=1; $j<=$countsub;$j++){
+                        if ($post['subject']==$subs[$j-1]['name']):
+                            echo $subs[$j-1]['color'];
+                        endif;} ?>" class="sem-item"><?php echo $post['subject']?></li>                </button>
+                <div class="modals">
+                    <div class="modal-overlay">
+                        <div class="modal modal--1" data-target="popup">
+                            <b>Описание:</b><p></p>
+                            <p><b>ЗЕ:<?php echo $post['ze']?></b><span></span></p>
+                            <p><b>Специализация:<?php echo $post['spec']?></b><span></span></p>
+                        </div>
+                    </div>
+                </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
@@ -91,7 +180,22 @@
             <h2 class="sem-heading">Семестр 6</h2>
             <?php foreach ($posts as $post): ?>
                 <?php if($post['semestr']==6): ?>
-                    <li class="sem-item"><?php echo $post['subject']?></li>
+                    
+                    <button class="btn-modal" data-path="popup">
+                    <li style="background-color: <?php 
+                    for($j=1; $j<=$countsub;$j++){
+                        if ($post['subject']==$subs[$j-1]['name']):
+                            echo $subs[$j-1]['color'];
+                        endif;} ?>" class="sem-item"><?php echo $post['subject']?></li>                </button>
+                <div class="modals">
+                    <div class="modal-overlay">
+                        <div class="modal modal--1" data-target="popup">
+                            <b>Описание:</b><p></p>
+                            <p><b>ЗЕ:<?php echo $post['ze']?></b><span></span></p>
+                            <p><b>Специализация:<?php echo $post['spec']?></b><span></span></p>
+                        </div>
+                    </div>
+                </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
@@ -99,7 +203,21 @@
             <h2 class="sem-heading">Семестр 7</h2>
             <?php foreach ($posts as $post): ?>
                 <?php if($post['semestr']==7): ?>
-                    <li class="sem-item"><?php echo $post['subject']?></li>
+                    <button class="btn-modal" data-path="popup">
+                    <li style="background-color: <?php 
+                    for($j=1; $j<=$countsub;$j++){
+                        if ($post['subject']==$subs[$j-1]['name']):
+                            echo $subs[$j-1]['color'];
+                        endif;} ?>" class="sem-item"><?php echo $post['subject']?></li>                </button>
+                <div class="modals">
+                    <div class="modal-overlay">
+                        <div class="modal modal--1" data-target="popup">
+                            <b>Описание:</b><p></p>
+                            <p><b>ЗЕ:<?php echo $post['ze']?></b><span></span></p>
+                            <p><b>Специализация:<?php echo $post['spec']?></b><span></span></p>
+                        </div>
+                    </div>
+                </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
@@ -107,7 +225,21 @@
             <h2 class="sem-heading">Семестр 8</h2>
             <?php foreach ($posts as $post): ?>
                 <?php if($post['semestr']==8): ?>
-                    <li class="sem-item"><?php echo $post['subject']?></li>
+                    <button class="btn-modal" data-path="popup">
+                    <li style="background-color: <?php 
+                    for($j=1; $j<=$countsub;$j++){
+                        if ($post['subject']==$subs[$j-1]['name']):
+                            echo $subs[$j-1]['color'];
+                        endif;} ?>" class="sem-item"><?php echo $post['subject']?></li>                </button>
+                <div class="modals">
+                    <div class="modal-overlay">
+                        <div class="modal modal--1" data-target="popup">
+                            <b>Описание:</b><p></p>
+                            <p><b>ЗЕ:<?php echo $post['ze']?></b><span></span></p>
+                            <p><b>Специализация:<?php echo $post['spec']?></b><span></span></p>
+                        </div>
+                    </div>
+                </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </ul>
