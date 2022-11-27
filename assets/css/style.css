@@ -1,221 +1,146 @@
-*{
-    font-family: 'Comfortaa', cursive;
-}
-html,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #5c5b5b;
-}
-body{
-    background: #f6f6f6;
-}
-a{
-    text-decoration: none;
-    color: inherit;
-}
-input{
-    padding: 10px 12px;
-    display: block;
-    width: 100%;
-    border-radius: 3px;
-    border: 1px solid #ececec;
-    line-height: 1.5rem;
-    color: #444444;
-    font-size: 1rem;
-}
-/*
-    HEADER
- */
-header{
-    background: #2d2f2f;
-    height: 70px;
-}
-header *{
-    color: #ffffff;
-}
-header h1 {
-    margin-top: 13px;
-}
-header h1 a{
-    color: #ffffff;
-}
-header h1 a:hover{
-    color: #ffffff;
-}
-header ul{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    float: right;
-}
-header ul li{
-    float: left;
-    position: relative;
-}
-header ul li a{
-    display: block;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #ffffff;
-    padding: 18px;
-}
-header ul li a:hover {
-    background: #2d2f2f;
-    transition: 0.5s;
-    color:#fff;
-}
-header ul li:hover ul{
-    display: block;
-}
-header ul li ul li {
-    width: 100%;
-}
-/*
-    Main
- */
-.main-content .post{
-    margin-bottom: 30px;
-}
-.main-content .post_text{
-    background: #ffffff;
-    padding: 8px;
-    border-radius: 3px;
-}
-.main-content .post_text h3{
-    margin: 14px 0;
-}
-.main-content .post_text h3 a:hover{
-    text-decoration: underline;
-    color: #5c5b5b;
-}
-.main-content .post_text i{
-    margin: 0px 14px 14px 0;
+@import url(reset.css); /* Файл сброса стилей */
+@import url(../fonts/HelveticaNeueCyr/stylesheet.css); /* Подключение шрифтов */
+
+/* Общие настройки */
+
+.container {
+  display: flex;
+  max-width: 1376px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.post-list {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
+body {
+  font-family: "HelveticaNeueCyr";
 }
 
-.post-item {
-    max-width: 200px;
-
-    border: 1px solid #2d2f2f;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 72px;
-    height: 100%;
+/* Header */
+.header {
+  background: #2d2f2f;
+  color: #f6f6f6;
+  height: 70px;
 }
 
-.post-item :first-child {
-    margin-left: 0px;
+.header__container {
+  height: inherit;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.header__link,
+.header .logo {
+  height: inherit;
+}
+
+.header .logo {
+  padding: 7px 0;
+}
+
+.header__title {
+  font-size: 21px;
+}
+/* Настройки для модального окна */
 
 .btn-modal {
-    max-width: 222px;
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    background: #f6f6f6;
+  width: 100%;
+  border: none;
+  background: #f6f6f6;
 }
 
 .modal-overlay {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
 .modal {
-    position: unset;
-    background-color: #fff;
-    max-width: 500px;
-    max-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
+  position: unset;
+  background-color: #fff;
+  max-width: 500px;
+  max-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
 }
 
 .modal-overlay--visible {
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.3s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
 }
 
 .modal--visible {
-    display: block;
+  display: block;
 }
 
-.sem {
-    display: flex;
-    flex-direction: column;
+/* disciplines */
+
+.disciplines {
+  background: #f6f6f6;
+  text-align: center;
+  color: #2d2f2f;
 }
 
-.main-content-test {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-    max-width: 1360px;
-    width: 100%;
-    margin: 0 auto;
+.disciplines__title {
+  font-size: 20px;
+  margin: 25px 0 30px 0;
 }
 
-.list-sem {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* semestr  */
+
+.semestr {
+  margin-right: 10px;
 }
 
-.content-heading {
-    display: flex;
-    justify-content: center;
-    font-size: 18px;
-    line-height: 0.9;
-    text-transform: uppercase;
-    margin: 10px;
+.semestr__title {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
-.main-discp {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.semestr__item {
+  border: 1px solid #2d2f2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }
 
-.sem-heading {
-    font-size: 14px;
+/* data-length */
+
+li[data-length="2"] {
+  height: 50px;
+  /* margin-bottom: 2.5px; */
 }
 
-.sem-item {
-    padding: 4px;
-    border: 1px solid black;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4px;
+li[data-length="3"] {
+  height: 75px;
+  /* margin-bottom: 3.75px; */
 }
 
-.sem-subj {
-    font-size: 12px;
+li[data-length="4"] {
+  height: 100px;
+  /* margin-bottom: 5px; */
+}
+
+li[data-length="8"] {
+  height: 200px;
+  /* margin-bottom: 10px; */
+}
+
+li[data-length="9"] {
+  height: 225px;
+  /* margin-bottom: 11.25px; */
 }
