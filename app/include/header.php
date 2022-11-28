@@ -14,14 +14,15 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="assets/css/media.css">
+        <link type="Image/x-icon" href="/assets/img/favicon.ico" rel="icon">
 		<title>Moscow Discpilines</title>
 	</head>
 <body>
 
 <header class="header">
     <div class="container header__container">
-        <a href="#" class="header__link"><img src="../../assets/img/logo.png" alt="Логотип Московского Политехнического университета" class="logo"></a>
+        <a href="#" class="header__link"><img src="../../assets/img/logo.png" alt="Логотип Московского Политехнического университета" class="logo"><img src="../../assets/img/logo_min.png" alt="Логотип Московского Политехнического университета" class="logo_min"></a>
         <h2 class="header__title">Карта дисциплин</h2>
     </div>
 </header>
