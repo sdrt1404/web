@@ -2,7 +2,7 @@
 
 $driver = 'mysql';
 $host = 'localhost';
-$db_name = 'discp';
+$db_name = 'disc';
 $db_user = 'root';
 $db_pass = 'mysql';
 $charset = 'utf8';

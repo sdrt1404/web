@@ -1,0 +1,53 @@
+@media (max-width: 1439px) {
+  .container {
+    padding: 0 30px;
+  }
+  .container {
+    flex-wrap: wrap;
+  }
+  .disciplines__title {
+    padding: 0 30px;
+  }
+  .semestr {
+    margin-right: 0;
+    padding: 0 5px;
+    margin-bottom: 40px;
+  }
+  .semestr:nth-child(odd) {
+    padding-left: 0;
+  }
+  .semestr:nth-child(even) {
+    padding-right: 0;
+  }
+}
+@media (min-width: 800px) and (max-width: 1439px) {
+  .semestr {
+    width: calc(100% / 4);
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 799px) {
+  .semestr {
+    width: calc(100% / 2);
+  }
+}
+
+@media (max-width: 499px) {
+  .semestr {
+    width: 100%;
+  }
+  .logo {
+    display: none;
+  }
+  .logo_min {
+    display: block;
+    padding: 10px 0;
+    height: inherit;
+  }
+}

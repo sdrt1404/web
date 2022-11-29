@@ -1,4 +1,4 @@
 <?php
 const SITE_ROOT = __DIR__;
-const BASE_URL = "http://localhost/www/dinamic-site/";
+const BASE_URL = "http://localhost/www/web-main/";
 define("ROOT_PATH", realpath(dirname(__FILE__)));
