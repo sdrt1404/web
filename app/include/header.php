@@ -6,25 +6,12 @@
     //Проверить можно написав tt($posts) или tt($subs) строчкой ниже
     $countsub = count($subs); //считает количество предметов в БД, т.к ИД != их количество
     $datalength = 25; //Длина объекта, ниже умножение в пункте style
-<<<<<<< HEAD
     $sem = [];
     foreach($posts as $key => $post){
         $sem[$key] = $post['semestr'];
     }
     unset($key);
     $maxsem = max($sem);
-    // foreach ($posts as $post){
-    // for($j=1; $j<=$countsub;$j++){
-    //     if ($post['subject']==$subs[$j-1]['name']):
-    //         echo '<p><b>Предмет:</b>' . $subs[$j-1]['name'] . '</p>';
-    //         echo '<p><b>Описание:</b>' . $subs[$j-1]['description'] . '</p>';
-    //         echo '<p><b>ЗЕ:</b>' . $post['ze'] . '</p>';
-    //         echo '<p><b>Специализация:</b>'. $subs[$j-1]['name_type'] . '</p>';
-    //     endif;
-    // }}
-
-=======
->>>>>>> 25229f01bdffc67ed65cf671a0b5e0e356313626
 ?>
 
 <!doctype html>
