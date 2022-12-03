@@ -12,6 +12,7 @@
     }
     unset($key);
     $maxsem = max($sem);
+    // tt($posts);
 ?>
 
 <!doctype html>
@@ -29,6 +30,9 @@
 <header class="header">
     <div class="container header__container">
         <a href="#" class="header__link"><img src="../../assets/img/logo.png" alt="Логотип Московского Политехнического университета" class="logo"><img src="../../assets/img/logo_min.png" alt="Логотип Московского Политехнического университета" class="logo_min"></a>
-        <h2 class="header__title">Карта дисциплин</h2>
+        <nav class="menu">
+            <h2 class="header__title">Карта дисциплин</h2>
+            <a href="index.php" class="menu__link">На главную</a>
+        </nav>
     </div>
 </header>

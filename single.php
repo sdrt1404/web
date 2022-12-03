@@ -1,6 +1,6 @@
 <?php include("app/include/header.php"); ?>
 <main class="disciplines">
-<h1 class="disciplines__title">Перечень дисциплин для 'Название специальности'</h1>
+<h1 class="disciplines__title">Перечень дисциплин для <?php echo $post['spec'] ?></h1>
 	<div class="container">
 		<?php for($i=1; $i<=$maxsem;$i++):?>
 			<ul class="semestr">
@@ -40,4 +40,5 @@
 	</div>    
 </main>
 
+<script src="assets/js/script.js"></script>
 <?php include("app/include/footer.php"); ?>

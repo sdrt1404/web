@@ -10,6 +10,10 @@
   width: 100%;
 }
 
+.container-wrap {
+  flex-wrap: wrap;
+}
+
 body {
   font-family: "HelveticaNeueCyr";
 }
@@ -42,7 +46,34 @@ body {
 
 .header__title {
   font-size: 21px;
+  font-weight: 500;
 }
+
+.menu {
+  font-size: 0;
+}
+
+.menu > * {
+  display: inline-block;
+}
+
+.menu h2 {
+  margin-right: 5px;
+}
+
+.menu__link {
+  font-size: initial;
+  font-weight: 400;
+  border-left: 2px solid #f6f6f6;
+  padding-left: 5px;
+  transition: all 0.2s ease-in;
+}
+
+.menu__link:hover,
+.menu__link:active {
+  text-shadow: 0 0 0.65px #f3f3eb, 0 0 0.65px #f3f3eb;
+}
+
 /* Настройки для модального окна */
 
 .btn-modal {
@@ -69,14 +100,26 @@ body {
 }
 
 .modal {
-  position: unset;
-  background-color: #fff;
+  /* sizing */
   max-width: 500px;
   max-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 30px 20px;
+  border-radius: 15px;
+  /*  */
+  background-color: #f6f6f6;
   display: none;
+  /*  */
+  text-align: left;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+.modal > * {
+  padding-bottom: 20px;
+}
+
+.modal b {
+  margin-right: 5px;
 }
 
 .modal-overlay--visible {
@@ -95,11 +138,46 @@ body {
   background: #f6f6f6;
   text-align: center;
   color: #2d2f2f;
+  padding: 25px 0 0 0;
 }
 
 .disciplines__title {
   font-size: 20px;
-  margin: 25px 0 30px 0;
+  margin: 0 0 30px 0;
+}
+
+.disciplines__card {
+  background-color: #2d2f2f;
+  height: 100px;
+  width: calc(100% / 3 - 10px);
+  margin: 0 15px 15px 0;
+  border-radius: 15px;
+  color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.disciplines__card:hover,
+.disciplines__card:active {
+  font-weight: bold;
+}
+
+.disciplines__card:nth-child(4n + 2) {
+  background-color: #349d9d;
+}
+
+.disciplines__card:nth-child(4n + 3) {
+  background-color: #35349d;
+}
+
+.disciplines__card:nth-child(4n + 4) {
+  background-color: #349d65;
+}
+
+.disciplines__card:nth-child(3n + 3) {
+  margin-right: 0;
 }
 
 /* semestr  */
@@ -108,7 +186,7 @@ body {
   margin-right: 10px;
 }
 
-.semestr:last-child {
+.semestr:last-of-type {
   margin-right: 0;
 }
 
@@ -124,6 +202,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 5px;
+  font-size: 12px;
 }
 
 /* data-length */
